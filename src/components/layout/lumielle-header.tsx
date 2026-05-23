@@ -1,14 +1,15 @@
-"use client";
 
-import * as React from "react"
 import { Search, User, ShoppingBag, Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet.tsx"
 import lumielleIcon from "@/assets/lumielle-icon.jpg"
+import { Link } from "react-router-dom";
+
 // Centralized navigation config for easy maintenance
 const navItems = [
-    { name: "Home", href: "#" },
-    { name: "Shop", href: "#" },
-    { name: "Contact Us", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "Shop", href: "/shop" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact Us", href: "/contact" },
 ]
 
 export function LumielleHeader() {
@@ -46,9 +47,13 @@ export function LumielleHeader() {
                             </SheetHeader>
                             <nav className="flex flex-col mt-6 text-base tracking-wide gap-4">
                                 {navItems.map((item) => (
-                                    <a key={item.name} href={item.href} className="py-2 text-zinc-600 hover:text-black transition-colors">
+                                    <Link
+                                        key={item.name}
+                                        href={item.href}
+                                        className="hover:text-black transition-colors relative group py-1"
+                                    >
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 ))}
                             </nav>
                         </SheetContent>

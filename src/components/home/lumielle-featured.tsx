@@ -1,5 +1,11 @@
 import * as React from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import caramelLatter from "@/assets/caramel-latte.jpeg";
+import mauveMist from "@/assets/mauve-mist.jpeg";
+import peachGlow from "@/assets/peach-glow.jpeg";
+import rosePetal from "@/assets/rose-petal.jpeg";
+import smokeChic from "@/assets/smoke-chic.jpeg";
+import sunkissedBeige from "@/assets/sunkissed-beige.jpeg";
 
 // Interface defining the type structure for our premium cosmetics data
 interface ProductItem {
@@ -9,7 +15,7 @@ interface ProductItem {
     originalPrice: string
     salePrice: string
     isOnSale: boolean
-    imageUrl: string
+    image: string
     swatches: string[] // Hex color codes for the preview circles
 }
 
@@ -22,7 +28,7 @@ const products: ProductItem[] = [
         originalPrice: "$450.00",
         salePrice: "$400.00",
         isOnSale: true,
-        imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600&auto=format&fit=crop",
+        image: caramelLatter,
         swatches: ["#D4A373", "#A67C52", "#7851A9", "#4A3728"]
     },
     {
@@ -32,7 +38,7 @@ const products: ProductItem[] = [
         originalPrice: "$450.00",
         salePrice: "$400.00",
         isOnSale: true,
-        imageUrl: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=600&auto=format&fit=crop",
+        image: mauveMist,
         swatches: ["#D9A5B3", "#B57C8A", "#8C5363", "#5C2E3B"]
     },
     {
@@ -42,17 +48,17 @@ const products: ProductItem[] = [
         originalPrice: "$450.00",
         salePrice: "$400.00",
         isOnSale: true,
-        imageUrl: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600&auto=format&fit=crop",
+        image: peachGlow,
         swatches: ["#F3B19A", "#E0896C", "#C8654B", "#993E2B"]
     },
     {
         id: "prod-4",
-        name: "Rose Quartz",
+        name: "Rose Petal",
         subtitle: "Soft romantic pinks infused with shimmering micro-crystals",
         originalPrice: "$450.00",
         salePrice: "$400.00",
         isOnSale: true,
-        imageUrl: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&auto=format&fit=crop",
+        image: rosePetal,
         swatches: ["#F9D5D5", "#EEA4A4", "#CE6A6A", "#9E3D3D"]
     },
     {
@@ -62,7 +68,7 @@ const products: ProductItem[] = [
         originalPrice: "$450.00",
         salePrice: "$400.00",
         isOnSale: true,
-        imageUrl: "https://images.unsplash.com/photo-1515688594390-b649af70d282?q=80&w=600&auto=format&fit=crop",
+        image: smokeChic,
         swatches: ["#E5B25D", "#C28E3A", "#96661C", "#5C3D0A"]
     },
     {
@@ -72,7 +78,7 @@ const products: ProductItem[] = [
         originalPrice: "$450.00",
         salePrice: "$400.00",
         isOnSale: true,
-        imageUrl: "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?q=80&w=600&auto=format&fit=crop",
+        image: sunkissedBeige,
         swatches: ["#CBB49E", "#9C7C5D", "#6F4E37", "#3B2314"]
     }
 ]
@@ -156,7 +162,7 @@ export function LumielleFeatured() {
                                                 </div>
                                             )}
                                             <img
-                                                src={product.imageUrl}
+                                                src={product.image}
                                                 alt={product.name}
                                                 className="w-full h-full object-cover object-center transform transition-transform duration-700 hover:scale-105"
                                                 loading="lazy"
