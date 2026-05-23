@@ -1,7 +1,6 @@
-
 import { LumielleHeader } from "@/components/layout/lumielle-header"
 import { LumielleFooter } from "@/components/layout/lumielle-footer"
-import { Sparkles, Eye, Compass } from "lucide-react"
+import { Sparkles, Eye, Compass, MapPin } from "lucide-react"
 
 export default function LumielleAbout() {
     return (
@@ -100,6 +99,50 @@ export default function LumielleAbout() {
                             </div>
 
                         </div>
+                    </div>
+                </section>
+
+                {/* =========================================================================
+            ADDED NEW SECTION: THE ATELIER / LOCATION MAP
+           ========================================================================= */}
+                {/* =========================================================================
+    ADDED NEW SECTION: THE ATELIER / LOCATION MAP
+   ========================================================================= */}
+                <section className="w-full py-20 px-4 md:px-12 bg-white border-b border-zinc-100">
+                    <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                        {/* Map Description Text */}
+                        <div className="lg:col-span-4 space-y-4 lg:pr-6">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-pink/50 border border-[#b37066]/20 rounded-none">
+                                <MapPin className="size-3.5 text-[#b37066]" />
+                                <span className="font-sans text-[10px] font-semibold tracking-widest uppercase text-[#b37066]">Our Atelier</span>
+                            </div>
+                            <h2 className="font-serif text-3xl font-light text-zinc-900 tracking-wide">
+                                Visit Us in Mandaluyong
+                            </h2>
+                            <p className="text-xs md:text-sm font-light text-zinc-500 leading-relaxed tracking-wide">
+                                Experience the structural elegance of our Makeup Notebooks in person. Our flagship space is nestled along the bustling pulse of Boni Avenue.
+                            </p>
+                            <div className="pt-2 text-xs font-sans tracking-wider text-zinc-400 font-medium uppercase">
+                                Boni Avenue, Mandaluyong City, Philippines
+                            </div>
+                        </div>
+
+                        {/* Interactive Styled Google Map (Fixed Parameter Solution) */}
+                        <div className="lg:col-span-8 w-full h-[350px] md:h-[400px] bg-zinc-50 border border-zinc-200 p-2 shadow-xs group">
+                            <iframe
+                                title="Lumielle Mandaluyong Location Map"
+                                /* Using the official google.com/maps search endpoint with URL-escaped address text query.
+                                  This ensures 100% stability without any brittle 'pb' tokens.
+                                */
+                                src="https://maps.google.com/maps?q=Boni%20Avenue,%20Mandaluyong&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                className="w-full h-full border-0 contrast-[0.9] grayscale-[0.1] transition-all duration-500 group-hover:grayscale-0 group-hover:contrast-100"
+                                allowFullScreen={false}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
+
                     </div>
                 </section>
 
