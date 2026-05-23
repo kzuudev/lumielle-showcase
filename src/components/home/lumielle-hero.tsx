@@ -1,9 +1,6 @@
-import * as React from "react"
+
 import Hero from "@/assets/hero.jpeg"
-interface LumielleHeroProps {
-    /** Optional override for the product showcase image asset */
-    imageSrc?: string
-}
+
 
 export function LumielleHero() {
     return (

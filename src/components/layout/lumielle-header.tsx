@@ -49,8 +49,8 @@ export function LumielleHeader() {
                                 {navItems.map((item) => (
                                     <Link
                                         key={item.name}
-                                        href={item.href}
-                                        className="hover:text-black transition-colors relative group py-1"
+                                        to={item.href}
+                                        className="hover:text-black transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:bg-black after:transition-all"
                                     >
                                         {item.name}
                                     </Link>

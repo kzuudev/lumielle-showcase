@@ -1,4 +1,4 @@
-import * as React from "react"
+
 import LumielleBanner from "@/assets/lumielle-showcase-banner.jpeg" // Reusing your existing high-quality asset
 
 export function LumielleShowcaseBanner() {
