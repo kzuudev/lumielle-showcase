@@ -1,5 +1,5 @@
 import * as React from "react"
-// 1. Import the routing tools from react-router-dom
+
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Home from "@/pages/home.tsx";
 import Contact from "@/pages/contact.tsx";
@@ -7,11 +7,6 @@ import Shop from "@/pages/shop.tsx";
 import About from "@/pages/about.tsx";
 import './App.css'
 
-/* =========================================================================
-   SCROLL MANAGER COMPONENT
-   This ensures pages snap smoothly to the top when switching layouts, 
-   and handles sliding down seamlessly when navigating to section IDs like #contact.
-   ========================================================================= */
 function ScrollManager() {
     const location = useLocation()
 
